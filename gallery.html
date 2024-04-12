@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAKEOLOGY | Catalogue</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rakkas&display=swap">
+    <style>
+    body {    
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <img src="images/logoo.png" alt="Logo" class="logo">
+                <h1 class="company-name">BAKEOLOGY</h1>
+            </div>
+            <div class="nav-right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Catalogue</a></li>
+                    <li><a href="index.html#specials">Specials</a></li>
+                    <li><a href="blog.html">Blogs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <br>
+        <br>
+        <br><br>
+        <div class="image-grid">
+            <div class="product">
+                <img src="images/pinkcake.jpeg" alt="Image 1" >
+                <p class="product-name">Pink Layer Cake</p>
+                <p class="product-price"> Rs. 2200</p>
+            </div>
+            <div class="product">
+                <img src="images/choco.jpeg" alt="Image 1">
+                <p class="product-name">Strawberry Chocolate Cake</p>
+                <p class="product-price"> Rs. 2000</p>
+            </div>
+            <div class="product">
+                <img src="images/crooo.jpeg" alt="Image 1">
+                <p class="product-name">Chocolate Croissants</p>
+                <p class="product-price"> Rs. 650</p>
+            </div>
+            <div class="product">
+                <img src="images/delicious.avif" alt="Image 1">
+                <p class="product-name">Pink Chocolate Cake</p>
+                <p class="product-price"> Rs. 1800</p>
+            </div>
+            <div class="product">
+                <img src="images/unicorn.jpeg" alt="Image 1">
+                <p class="product-name">Unicorn Themed Cake</p>
+                <p class="product-price"> Rs. 1500</p>
+            </div>
+            <div class="product">
+                <img src="images/flower.webp" alt="Image 1">
+                <p class="product-name">Flower Themed Cake</p>
+                <p class="product-price"> Rs. 2100</p>
+            </div>
+            <div class="product">
+                <img src="images/strawberry.jpeg" alt="Image 1">
+                <p class="product-name">Strawberry Cake</p>
+                <p class="product-price"> Rs. 1500</p>
+            </div>
+            <div class="product">
+                <img src="images/rain.webp" alt="Image 1">
+                <p class="product-name">Rainbow Cupcake</p>
+                <p class="product-price"> Rs. 220</p>
+            </div>
+           
+        </div>
+   </div>
+   
+   </div>
+   <div id="product-enlarged" class="product-enlarged">
+    <img id="enlarged-image" src="" alt="Enlarged Image">
+    <p id="enlarged-name"></p>
+    <p id="enlarged-price"></p>
+    <button id="close-enlarged" class="close-enlarged">&times;</button> <!-- Cross button -->
+</div>
+
+
+   
+    </main>
+    <footer>
+        <div class="logo-container">
+            <img src="IMAGES/logoo.png" alt="Logo">
+        </div>
+        <div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Catalogue</a></li>
+                <li><a href="index.html#specials">Specials</a></li>
+                <li><a href="blog.html">Blogs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <p>&copy; 2024 BAKEOLOGY. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+   <script>
+   document.addEventListener('DOMContentLoaded', function() {
+    // Get all product elements
+    const products = document.querySelectorAll('.product');
+    const enlargedProduct = document.getElementById('product-enlarged');
+    const enlargedImage = document.getElementById('enlarged-image');
+    const enlargedName = document.getElementById('enlarged-name');
+    const enlargedPrice = document.getElementById('enlarged-price');
+    const closeButton = document.getElementById('close-enlarged'); // Get the close button element
+
+    // Function to show the enlarged product
+    function showEnlargedProduct(product) {
+        const imageSrc = product.querySelector('img').src;
+        const name = product.querySelector('.product-name').textContent;
+        const price = product.querySelector('.product-price').textContent;
+
+        enlargedImage.src = imageSrc;
+        enlargedName.textContent = name;
+        enlargedPrice.textContent = price;
+
+        enlargedProduct.style.display = 'block';
+    }
+
+    // Function to hide the enlarged product
+    function hideEnlargedProduct() {
+        enlargedProduct.style.display = 'none';
+    }
+
+    // Add click event listener to each product
+    products.forEach(product => {
+        product.addEventListener('click', function() {
+            showEnlargedProduct(this);
+        });
+    });
+
+    // Add click event listener to hide the enlarged product when clicked outside
+    enlargedProduct.addEventListener('click', function(event) {
+        if (event.target === this) {
+            hideEnlargedProduct();
+        }
+    });
+
+    // Add click event listener to the close button
+    closeButton.addEventListener('click', function() {
+        hideEnlargedProduct();
+    });
+});
+
+
+   </script>
+</body>
+</html>

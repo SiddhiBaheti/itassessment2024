@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAKEOLOGY</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rakkas&display=swap">
+    <style>
+    body {    
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+    
+    </style>
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <img src="images/logoo.png" alt="Logo" class="logo">
+                <h2 class="company-name">BAKEOLOGY</h2>
+            </div>
+            <div class="nav-right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Catalogue</a></li>
+                    <li><a href="#specials">Specials</a></li>
+                    <li><a href="blog.html">Blogs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+            <div class="slider">
+                <div class="slide active">
+                    <img src="images/blue.jpeg" alt="pinkcake">
+                    <button class="slide-button">"Dedicated to give you the best taste"</button>
+                </div>
+                <div class="slide">
+                    <img src="images/cup.jpeg" alt="chocolatecake">
+                    <button class="slide-button">"Dedicated to give you the best taste"</button>
+                </div>
+                <div class="slide">
+                    <img src="images/croi.jpeg" alt="whitecake">
+                    <button class="slide-button">"Dedicated to give you the best taste"</button>
+                </div>
+                <div class="slide">
+                    <img src="images/cream.jpeg" alt="whitecake">
+                    <button class="slide-button">"Dedicated to give you the best taste"</button>
+                </div>
+                
+            </div>
+        <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </main>
+    <div id="specials">
+        <br> <br> <br>
+        <h1 style="text-align:center; color:#333;"> Aesthetically Pleasing</h1>
+        <div class="image-grid">
+            <div class="product">
+                <img src="images/rain.webp" alt="Image 1">
+            </div>
+            <div class="product">
+                <img src="images/flower.webp" alt="Image 1">
+            </div>
+            <div class="product">
+                <img src="images/crooo.jpeg" alt="Image 1">
+            </div>
+            <div class="product">
+                <img src="images/unicorn.jpeg" alt="Image 1">
+            </div>
+        </div>
+        <div id="Subscribe">
+            <h1 style="text-align:center; color:#333;"> Our Newsletter</h1>
+            <p style="text-align:center; color:#333;"> Get latest updates on what's cooking at BAKEOLOGY.</p>
+            <div class="subscribe-grid">
+                <!-- Add the form here -->
+                <form id="subscribeForm">
+                    <input type="email" id="emailInput" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                    <br> <br>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+    <footer>
+        <div class="logo-container">
+            <img src="IMAGES/logoo.png" alt="Logo">
+        </div>
+        <div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Catalogue</a></li>
+                <li><a href="#specials">Specials</a></li>
+                <li><a href="blog.html">Blogs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <p>&copy; 2024 BAKEOLOGY. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    
+    
+    <script src="scripttoggle.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Get the form element
+    var subscribeForm = document.getElementById('subscribeForm');
+
+    // Add an event listener for the form submission
+    subscribeForm.addEventListener('submit', function(event) {
+        // Prevent the form from submitting normally
+        event.preventDefault();
+
+        // Get the email input value
+        var email = document.getElementById('emailInput').value;
+
+        // Display an alert message
+        alert('You have been subscribed: ' + email);
+        window.location.reload();
+    });
+});
+
+    </script>
+</body>
+</html>
